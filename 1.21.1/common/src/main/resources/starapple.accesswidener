@@ -1,0 +1,203 @@
+accessWidener v2 named
+
+# ArmorItem
+accessible field net/minecraft/item/ArmorItem attributeModifiers Ljava/util/function/Supplier;
+mutable field net/minecraft/item/ArmorItem attributeModifiers Ljava/util/function/Supplier;
+
+# CrossbowItem
+accessible method net/minecraft/item/CrossbowItem shoot (Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/entity/projectile/ProjectileEntity;IFFFLnet/minecraft/entity/LivingEntity;)V
+accessible method net/minecraft/item/CrossbowItem getSoundPitch (ZLnet/minecraft/util/math/random/Random;)F
+
+# ItemRenderer
+accessible method net/minecraft/client/render/item/ItemRenderer renderBakedItemModel (Lnet/minecraft/client/render/model/BakedModel;Lnet/minecraft/item/ItemStack;IILnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;)V
+
+# RenderLayers
+accessible field net/minecraft/client/render/RenderLayers BLOCKS Ljava/util/Map;
+
+# Entity
+accessible field net/minecraft/entity/Entity random Lnet/minecraft/util/math/random/Random;
+accessible field net/minecraft/entity/Entity dimensions Lnet/minecraft/entity/EntityDimensions;
+
+# LivingEntity
+accessible field net/minecraft/entity/LivingEntity itemUseTimeLeft I
+accessible method net/minecraft/entity/LivingEntity shouldAlwaysDropXp ()Z
+accessible field net/minecraft/entity/LivingEntity playerHitTimer I
+
+# MobEntity
+accessible field net/minecraft/entity/mob/MobEntity experiencePoints I
+
+# Persistent Projectile Entity
+accessible field net/minecraft/entity/projectile/PersistentProjectileEntity life I
+accessible field net/minecraft/entity/projectile/PersistentProjectileEntity inGround Z
+
+# TridentEntity
+accessible field net/minecraft/entity/projectile/TridentEntity LOYALTY Lnet/minecraft/entity/data/TrackedData;
+accessible field net/minecraft/entity/projectile/TridentEntity ENCHANTED Lnet/minecraft/entity/data/TrackedData;
+accessible method net/minecraft/entity/projectile/TridentEntity tryPickup (Lnet/minecraft/entity/player/PlayerEntity;)Z
+accessible field net/minecraft/entity/projectile/TridentEntity dealtDamage Z
+accessible method net/minecraft/entity/projectile/TridentEntity getLoyalty (Lnet/minecraft/item/ItemStack;)B
+
+# FishingBobberEntity
+accessible class net/minecraft/entity/projectile/FishingBobberEntity$PositionType
+
+# SheepEntity
+accessible field net/minecraft/entity/passive/SheepEntity DROPS Ljava/util/Map;
+
+# ExperienceOrbEntity
+accessible field net/minecraft/entity/ExperienceOrbEntity amount I
+accessible field net/minecraft/entity/ExperienceOrbEntity pickingCount I
+
+# ExperienceOrbSpawnS2CPacket
+mutable field net/minecraft/network/packet/s2c/play/ExperienceOrbSpawnS2CPacket experience I
+accessible field net/minecraft/network/packet/s2c/play/ExperienceOrbSpawnS2CPacket experience I
+
+# PersistentProjectileEntity
+accessible field net/minecraft/entity/projectile/PersistentProjectileEntity stack Lnet/minecraft/item/ItemStack;
+
+# AttributeContainer
+accessible field net/minecraft/entity/attribute/AttributeContainer custom Ljava/util/Map;
+
+# Enchantment Helper
+accessible method net/minecraft/enchantment/EnchantmentHelper forEachEnchantment (Lnet/minecraft/item/ItemStack;Lnet/minecraft/enchantment/EnchantmentHelper$Consumer;)V
+accessible method net/minecraft/enchantment/EnchantmentHelper forEachEnchantment (Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer;)V
+accessible class net/minecraft/enchantment/EnchantmentHelper$Consumer
+
+# StrafePlayerPhase
+accessible field net/minecraft/entity/boss/dragon/phase/StrafePlayerPhase path Lnet/minecraft/entity/ai/pathing/Path;
+
+# RecipeManager
+accessible method net/minecraft/recipe/RecipeManager getAllOfType (Lnet/minecraft/recipe/RecipeType;)Ljava/util/Collection;
+
+# ModelPredicateProviderRegistry
+accessible method net/minecraft/client/item/ModelPredicateProviderRegistry register (Lnet/minecraft/item/Item;Lnet/minecraft/util/Identifier;Lnet/minecraft/client/item/ClampedModelPredicateProvider;)V
+
+# CookingRecipeSerializer
+accessible field net/minecraft/recipe/CookingRecipeSerializer recipeFactory Lnet/minecraft/recipe/AbstractCookingRecipe$RecipeFactory;
+
+
+
+
+# Common
+# ItemGroups
+accessible	field	net/minecraft/item/ItemGroups	BUILDING_BLOCKS	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	COLORED_BLOCKS	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	NATURAL	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	FUNCTIONAL	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	REDSTONE	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	HOTBAR	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	SEARCH	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	TOOLS	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	COMBAT	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	FOOD_AND_DRINK	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	INGREDIENTS	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	SPAWN_EGGS	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	OPERATOR	Lnet/minecraft/registry/RegistryKey;
+accessible	field	net/minecraft/item/ItemGroups	INVENTORY	Lnet/minecraft/registry/RegistryKey;
+
+########################
+# StatusEffect
+########################
+
+accessible class net/minecraft/entity/effect/StatusEffect
+extendable class net/minecraft/entity/effect/StatusEffect
+
+accessible field net/minecraft/entity/effect/StatusEffect attributeModifiers Ljava/util/Map;
+accessible field net/minecraft/entity/effect/StatusEffect category Lnet/minecraft/entity/effect/StatusEffectCategory;
+accessible field net/minecraft/entity/effect/StatusEffect color I
+accessible field net/minecraft/entity/effect/StatusEffect particleFactory Ljava/util/function/Function;
+accessible field net/minecraft/entity/effect/StatusEffect translationKey Ljava/lang/String;
+accessible field net/minecraft/entity/effect/StatusEffect fadeTicks I
+accessible field net/minecraft/entity/effect/StatusEffect applySound Ljava/util/Optional;
+accessible field net/minecraft/entity/effect/StatusEffect requiredFeatures Lnet/minecraft/resource/featuretoggle/FeatureSet;
+
+accessible method net/minecraft/entity/effect/StatusEffect <init> (Lnet/minecraft/entity/effect/StatusEffectCategory;I)V
+accessible method net/minecraft/entity/effect/StatusEffect <init> (Lnet/minecraft/entity/effect/StatusEffectCategory;ILnet/minecraft/particle/ParticleEffect;)V
+
+accessible method net/minecraft/entity/effect/StatusEffect applyUpdateEffect (Lnet/minecraft/entity/LivingEntity;I)Z
+accessible method net/minecraft/entity/effect/StatusEffect applyInstantEffect (Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/LivingEntity;ID)V
+accessible method net/minecraft/entity/effect/StatusEffect canApplyUpdateEffect (II)Z
+accessible method net/minecraft/entity/effect/StatusEffect onApplied (Lnet/minecraft/entity/LivingEntity;I)V
+accessible method net/minecraft/entity/effect/StatusEffect playApplySound (Lnet/minecraft/entity/LivingEntity;I)V
+accessible method net/minecraft/entity/effect/StatusEffect onEntityRemoval (Lnet/minecraft/entity/LivingEntity;ILnet/minecraft/entity/Entity$RemovalReason;)V
+accessible method net/minecraft/entity/effect/StatusEffect onEntityDamage (Lnet/minecraft/entity/LivingEntity;ILnet/minecraft/entity/damage/DamageSource;F)V
+accessible method net/minecraft/entity/effect/StatusEffect loadTranslationKey ()Ljava/lang/String;
+
+accessible method net/minecraft/entity/effect/StatusEffect onRemoved (Lnet/minecraft/entity/attribute/AttributeContainer;)V
+accessible method net/minecraft/entity/effect/StatusEffect onApplied (Lnet/minecraft/entity/attribute/AttributeContainer;I)V
+accessible method net/minecraft/entity/effect/StatusEffect forEachAttributeModifier (ILjava/util/function/BiConsumer;)V
+
+########################
+# ItemModelGenerator
+########################
+accessible class net/minecraft/data/client/ItemModelGenerator
+
+# fields
+accessible field net/minecraft/data/client/ItemModelGenerator TRIM_TYPE Lnet/minecraft/util/Identifier;
+accessible field net/minecraft/data/client/ItemModelGenerator TRIM_MATERIALS Ljava/util/List;
+accessible field net/minecraft/data/client/ItemModelGenerator writer Ljava/util/function/BiConsumer;
+
+# methods
+accessible method net/minecraft/data/client/ItemModelGenerator register (Lnet/minecraft/item/Item;Lnet/minecraft/data/client/Model;)V
+accessible method net/minecraft/data/client/ItemModelGenerator register (Lnet/minecraft/item/Item;Ljava/lang/String;Lnet/minecraft/data/client/Model;)V
+accessible method net/minecraft/data/client/ItemModelGenerator register (Lnet/minecraft/item/Item;Lnet/minecraft/item/Item;Lnet/minecraft/data/client/Model;)V
+accessible method net/minecraft/data/client/ItemModelGenerator registerWolfArmor (Lnet/minecraft/item/Item;)V
+accessible method net/minecraft/data/client/ItemModelGenerator registerCompass (Lnet/minecraft/item/Item;)V
+accessible method net/minecraft/data/client/ItemModelGenerator registerClock (Lnet/minecraft/item/Item;)V
+accessible method net/minecraft/data/client/ItemModelGenerator uploadArmor (Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;)V
+accessible method net/minecraft/data/client/ItemModelGenerator uploadArmor (Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;)V
+accessible method net/minecraft/data/client/ItemModelGenerator suffixTrim (Lnet/minecraft/util/Identifier;Ljava/lang/String;)Lnet/minecraft/util/Identifier;
+accessible method net/minecraft/data/client/ItemModelGenerator createArmorJson (Lnet/minecraft/util/Identifier;Ljava/util/Map;Lnet/minecraft/registry/entry/RegistryEntry;)Lcom/google/gson/JsonObject;
+accessible method net/minecraft/data/client/ItemModelGenerator registerArmor (Lnet/minecraft/item/ArmorItem;)V
+
+########################
+# BlockLootTableGenerator
+########################
+accessible class net/minecraft/data/server/loottable/BlockLootTableGenerator
+
+# fields (only if needed, listed all for full access)
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator WITH_SHEARS Lnet/minecraft/loot/condition/LootCondition$Builder;
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator registryLookup Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator explosionImmuneItems Ljava/util/Set;
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator requiredFeatures Lnet/minecraft/resource/featuretoggle/FeatureSet;
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator lootTables Ljava/util/Map;
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator SAPLING_DROP_CHANCE [F
+accessible field net/minecraft/data/server/loottable/BlockLootTableGenerator LEAVES_STICK_DROP_CHANCE [F
+
+# make the class extendable
+extendable class net/minecraft/data/server/loottable/BlockLootTableGenerator
+
+# methods (all protected/private)
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator createSilkTouchCondition ()Lnet/minecraft/loot/condition/LootCondition$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator createWithoutSilkTouchCondition ()Lnet/minecraft/loot/condition/LootCondition$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator createWithShearsOrSilkTouchCondition ()Lnet/minecraft/loot/condition/LootCondition$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator createWithoutShearsOrSilkTouchCondition ()Lnet/minecraft/loot/condition/LootCondition$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator applyExplosionDecay (Lnet/minecraft/item/ItemConvertible;Lnet/minecraft/loot/function/LootFunctionConsumingBuilder;)Lnet/minecraft/loot/function/LootFunctionConsumingBuilder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addSurvivesExplosionCondition (Lnet/minecraft/item/ItemConvertible;Lnet/minecraft/loot/condition/LootConditionConsumingBuilder;)Lnet/minecraft/loot/condition/LootConditionConsumingBuilder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator drops (Lnet/minecraft/item/ItemConvertible;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator dropsWithSilkTouch (Lnet/minecraft/block/Block;Lnet/minecraft/loot/entry/LootPoolEntry$Builder;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator dropsWithShears (Lnet/minecraft/block/Block;Lnet/minecraft/loot/entry/LootPoolEntry$Builder;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator dropsWithSilkTouchOrShears (Lnet/minecraft/block/Block;Lnet/minecraft/loot/entry/LootPoolEntry$Builder;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator drops (Lnet/minecraft/block/Block;Lnet/minecraft/item/ItemConvertible;Lnet/minecraft/loot/provider/number/LootNumberProvider;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator slabDrops (Lnet/minecraft/block/Block;)Lnet/minecraft/loot/LootTable$Builder;
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDrop (Lnet/minecraft/block/Block;)V
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDrop (Lnet/minecraft/block/Block;Lnet/minecraft/item/ItemConvertible;)V
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDrop (Lnet/minecraft/block/Block;Ljava/util/function/Function;)V
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDrop (Lnet/minecraft/block/Block;Lnet/minecraft/loot/LootTable$Builder;)V
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDropWithSilkTouch (Lnet/minecraft/block/Block;)V
+accessible method net/minecraft/data/server/loottable/BlockLootTableGenerator addDropWithSilkTouch (Lnet/minecraft/block/Block;Lnet/minecraft/block/Block;)V
+
+# RecipeManager
+accessible class net/minecraft/recipe/RecipeManager
+extendable class net/minecraft/recipe/RecipeManager
+
+accessible field net/minecraft/recipe/RecipeManager GSON Lcom/google/gson/Gson;
+accessible field net/minecraft/recipe/RecipeManager LOGGER Lorg/slf4j/Logger;
+accessible field net/minecraft/recipe/RecipeManager registryLookup Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;
+accessible field net/minecraft/recipe/RecipeManager recipesByType Lcom/google/common/collect/Multimap;
+accessible field net/minecraft/recipe/RecipeManager recipesById Ljava/util/Map;
+accessible field net/minecraft/recipe/RecipeManager errored Z
+
+accessible method net/minecraft/recipe/RecipeManager apply (Ljava/util/Map;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/profiler/Profiler;)V
+accessible method net/minecraft/recipe/RecipeManager get (Lnet/minecraft/recipe/RecipeType;Lnet/minecraft/util/Identifier;)Lnet/minecraft/recipe/RecipeEntry;
+
+accessible method net/minecraft/recipe/RecipeManager deserialize (Lnet/minecraft/util/Identifier;Lcom/google/gson/JsonObject;Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;)Lnet/minecraft/recipe/RecipeEntry;

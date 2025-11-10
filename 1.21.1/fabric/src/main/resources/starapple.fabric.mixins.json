@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "starapple.fabric.mixin",
+  "plugin": "starapple.fabric.MixinPluginFabric",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

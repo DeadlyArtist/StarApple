@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "starapple.mixin",
+  "plugin": "starapple.MixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "ItemEntityMixin",
+    "LivingEntityMixin",
+    "RecipeManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

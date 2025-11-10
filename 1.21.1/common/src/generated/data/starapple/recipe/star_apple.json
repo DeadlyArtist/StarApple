@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "nnn",
+    "nAn",
+    "nnn"
+  ],
+  "result": {
+    "count": 1,
+    "id": "starapple:star_apple"
+  }
+}
