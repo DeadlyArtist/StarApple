@@ -1,6 +1,7 @@
 package starapple.recipe;
 
 import com.google.gson.JsonElement;
+import com.mojang.serialization.JsonOps;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.advancement.AdvancementEntry;
@@ -11,18 +12,18 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.BuiltinRegistries;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryOps;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.server.ServerAdvancementLoader;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import starapple.ModEntry;
 import starapple.item.ModItems;
-import starapple.utils.DataProviderUtils;
-import starapple.utils.ItemUtils;
-import starapple.utils.Loader;
-import starapple.utils.XIDs;
+import starapple.utils.*;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -335,15 +336,31 @@ public class RecipeGenerator extends RecipeProvider {
         if (Loader.isModLoaded(XIDs.NetherStarBlock)) {
             createShapedRecipe(RecipeCategory.FOOD, List.of("nnn", "nAn", "nnn"), List.of(Input.of(ItemUtils.byId(XIDs.NetherStarBlock, "nether_star_block")), Input.of(Items.APPLE)), ModItems.ENCHANTED_STAR_APPLE.get()).offer(exporter);
         }
-        if (Loader.isModLoaded(XIDs.AllTheCompressed)) {
-            createShapedRecipe(RecipeCategory.FOOD, List.of("nnn", "nAn", "nnn"), List.of(Input.of(ItemUtils.byId(XIDs.AllTheCompressed, "nether_star_block")), Input.of(Items.APPLE)), ModItems.ENCHANTED_STAR_APPLE.get()).offer(exporter);
+        if (Loader.isModLoaded(XIDs.AllTheTweaks)) {
+            createShapedRecipe(RecipeCategory.FOOD, List.of("nnn", "nAn", "nnn"), List.of(Input.of(ItemUtils.byId(XIDs.AllTheTweaks, "nether_star_block")), Input.of(Items.APPLE)), ModItems.ENCHANTED_STAR_APPLE.get()).offer(exporter);
         }
     }
 
     public static void registerOptionalRecipes(Map<Identifier, JsonElement> map, ResourceManager resourceManager, RecipeManager recipeManager) {
+        var registryops = DataProviderUtils.getGlobalJsonRegistryOps();
         var exporter = new RecipeExporter() {
             public void accept(Identifier recipeId, Recipe<?> recipe, @Nullable AdvancementEntry advancement) {
-                map.put(recipeId, DataProviderUtils.toJson(recipeManager.registryLookup, Recipe.CODEC, recipe));
+                map.put(recipeId, DataProviderUtils.toJson(registryops, Recipe.CODEC, recipe));
+            }
+
+            public Advancement.Builder getAdvancementBuilder() {
+                return Advancement.Builder.createUntelemetered().parent(CraftingRecipeJsonBuilder.ROOT);
+            }
+        };
+
+        addOptionalRecipes(exporter);
+    }
+
+    public static void registerOptionalRecipeAdvancements(Map<Identifier, JsonElement> map, ResourceManager resourceManager, ServerAdvancementLoader advancementLoader) {
+        var registryops = DataProviderUtils.getGlobalJsonRegistryOps();
+        var exporter = new RecipeExporter() {
+            public void accept(Identifier recipeId, Recipe<?> recipe, @Nullable AdvancementEntry advancement) {
+                if (advancement != null) map.put(recipeId, DataProviderUtils.toJson(registryops, Advancement.CODEC, advancement.value()));
             }
 
             public Advancement.Builder getAdvancementBuilder() {

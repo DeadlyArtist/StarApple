@@ -9,7 +9,8 @@
   "mixins": [
     "ItemEntityMixin",
     "LivingEntityMixin",
-    "RecipeManagerMixin"
+    "RecipeManagerMixin",
+    "ServerAdvancementLoaderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

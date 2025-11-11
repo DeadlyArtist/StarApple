@@ -201,3 +201,20 @@ accessible method net/minecraft/recipe/RecipeManager apply (Ljava/util/Map;Lnet/
 accessible method net/minecraft/recipe/RecipeManager get (Lnet/minecraft/recipe/RecipeType;Lnet/minecraft/util/Identifier;)Lnet/minecraft/recipe/RecipeEntry;
 
 accessible method net/minecraft/recipe/RecipeManager deserialize (Lnet/minecraft/util/Identifier;Lcom/google/gson/JsonObject;Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;)Lnet/minecraft/recipe/RecipeEntry;
+
+# ServerAdvancementLoader
+accessible field net/minecraft/server/ServerAdvancementLoader LOGGER Lorg/slf4j/Logger;
+accessible field net/minecraft/server/ServerAdvancementLoader GSON Lcom/google/gson/Gson;
+accessible field net/minecraft/server/ServerAdvancementLoader advancements Ljava/util/Map;
+accessible field net/minecraft/server/ServerAdvancementLoader manager Lnet/minecraft/advancement/AdvancementManager;
+accessible field net/minecraft/server/ServerAdvancementLoader registryLookup Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;
+accessible method net/minecraft/server/ServerAdvancementLoader apply (Ljava/util/Map;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/profiler/Profiler;)V
+accessible method net/minecraft/server/ServerAdvancementLoader validate (Lnet/minecraft/util/Identifier;Lnet/minecraft/advancement/Advancement;)V
+
+# BuiltinRegistries
+accessible class net/minecraft/registry/BuiltinRegistries
+accessible field net/minecraft/registry/BuiltinRegistries REGISTRY_BUILDER Lnet/minecraft/registry/RegistryBuilder;
+accessible method net/minecraft/registry/BuiltinRegistries validate (Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;)V
+accessible method net/minecraft/registry/BuiltinRegistries validate (Lnet/minecraft/registry/RegistryEntryLookup;Lnet/minecraft/registry/RegistryWrapper;)V
+accessible method net/minecraft/registry/BuiltinRegistries hasBiomePlacementModifier (Lnet/minecraft/world/gen/feature/PlacedFeature;)Z
+accessible method net/minecraft/registry/BuiltinRegistries createWrapperLookup ()Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;

@@ -9,10 +9,6 @@ architectury {
 
 loom {
     accessWidenerPath = project(':common').loom.accessWidenerPath
-
-    mixin {
-
-    }
 }
 
 fabricApi {
@@ -40,6 +36,7 @@ configurations {
         canBeConsumed = false
     }
 }
+
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
