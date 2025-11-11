@@ -1,6 +1,7 @@
 package starapple.neoforge;
 
 import starapple.neoforge.utils.LoaderImpl;
+import starapple.recipe.RecipeGenerator;
 import starapple.utils.Loader;
 import starapple.utils.qwe;
 import net.neoforged.api.distmarker.Dist;

@@ -1,6 +1,7 @@
 package starapple.fabric;
 
 import starapple.fabric.utils.LoaderImpl;
+import starapple.recipe.RecipeGenerator;
 import starapple.utils.Loader;
 import net.fabricmc.api.ModInitializer;
 

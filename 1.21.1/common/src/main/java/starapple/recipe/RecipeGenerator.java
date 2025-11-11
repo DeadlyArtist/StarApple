@@ -31,6 +31,7 @@ import java.util.stream.IntStream;
 
 public class RecipeGenerator extends RecipeProvider {
 
+
     public RecipeGenerator(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookupFuture) {
         super(output, registryLookupFuture);
     }
@@ -351,6 +352,7 @@ public class RecipeGenerator extends RecipeProvider {
             public Advancement.Builder getAdvancementBuilder() {
                 return Advancement.Builder.createUntelemetered().parent(CraftingRecipeJsonBuilder.ROOT);
             }
+
         };
 
         addOptionalRecipes(exporter);
